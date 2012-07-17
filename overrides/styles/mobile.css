@@ -58,20 +58,20 @@
 	
 	/* =================================== Index =================================== */
 	
-	table.forumline th {
+	table.overall table.forumline > tbody > tr > th {
 		display: none;
 		height: auto !important;
 		padding: 7px 0 !important;
 	}
 	
-	table.forumline th:first-child {
+	table.overall table.forumline > tbody > tr > th:first-child {
 		display: block;
 		width: 100%;
 	}
 	
-	table.forumline td {
+	table.overall table.forumline > tbody > tr > td {
 		display: block;
-		padding: 0px !important;
+		padding: 0px;
 		width: auto;
 		height: auto;
 		white-space: normal !important;
@@ -82,18 +82,18 @@
 	}
 	
 	/* forum icon */
-	table.forumline td:first-child[align=center] {
+	table.forumline td[id^=cellFor] {
 		float: left;
 		width: 50px;
 		padding: 5px 0 !important;
 	}
 	
 	table.forumline td.statistical {
-		display: none;
+		display: none !important;
 	}
 	
 	/* title & description */
-	table.forumline td:nth-child(2) {
+	table.forumline td[id^=cellFor] + td {
 		padding: 5px 5px 5px 50px !important;
 	}
 	
@@ -106,7 +106,7 @@
 	
 	table.forumline td.borderleft[align=center][valign=middle]:last-child a.gensmall:first-child:before,
 	table.forumline td[id^="lastreply"] > span:first-child:before {
-		display: inline;
+		display: inline !important;
 		content: 'Letzter Beitrag:';
 		padding-right: 0.5em;
 		color: black;
@@ -115,7 +115,7 @@
 	
 	table.forumline td.borderleft[align=center][valign=middle]:last-child br,
 	table.forumline td[id^="lastreply"] br {
-		display: none;
+		display: none !important;
 	}
 	
 	table.forumline td.borderleft[align=center][valign=middle]:last-child a,
@@ -126,7 +126,7 @@
 	/* =================================== Forum =================================== */
 	
 	/* topic icon */
-	table.forumline td:first-child[align=center][valign=top] {
+	table.forumline td[id^=cellFor][valign=top] {
 		width: 15px;
 		padding: 4px !important;
 		padding-top: 10px !important;
@@ -219,5 +219,46 @@
 	table.forumline .userrow1[valign] + td > :first-child,
 	table.forumline .userrow2[valign] + td > :first-child {
 		text-align: right;
+	}
+	
+	/* =================================== Forms =================================== */
+
+	/* Login, Passwort vergessen */
+	form[action^=login] > table.forumline td[align=right],
+	form[action^=profile] > table.forumline td[style],
+	form[action^=login] > table.forumline td[align=right] + td,
+	form[action^=profile] > table.forumline td[style] + td {
+		text-align: center !important;
+		padding: 5px !important;
+	}
+	
+	#sect_smilies td:nth-child(2) {
+		width: auto !important;
+		white-space: normal !important;
+	}
+	
+	/* checkboxes below message textarea */
+	#message ~ table td {
+		width: auto;
+		display: table-cell;
+	}
+	
+	/* attachment file input */
+	#addAttachmentRow3 input[type=file] {
+		max-width: 200px;
+	}
+	
+	/* readable id */
+	#addAttachmentRow5 .row2 div {
+		float: none !important;
+		width: auto !important;
+	}
+	
+	textarea.posting_body {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
 	}
 /*}*/
