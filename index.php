@@ -8,6 +8,8 @@ function sendFile($fileName, $useCache = true) {
 	if (!file_exists($fileName))
 		throw new Exception('File does not exist: '.$filewName);
 	$contentType = fileNameToMime($fileName);
+	if (substr($contentType, 0, strlen('text/')) == 'text/')
+		$contentType .= '; charset=utf-8';
 
 	if ($useCache) {
 		// Datei nur senden, wenn seit dem letzen Aufruf geändert
