@@ -118,6 +118,7 @@ function sendWebDocument($url) {
 	$protocol = $_SERVER['SERVER_PROTOCOL'];
 	$headers = new HttpRequest();
 	$headers = $headers->raw();
+	$headers = str_replace('http://'.$_SERVER['HTTP_HOST'], 'http://'.$host, $headers);
 	$body = file_get_contents('php://input');
 
 	$request = "$method $url $protocol\r\n".
