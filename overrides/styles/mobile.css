@@ -11,9 +11,12 @@
 	
 	#container,
 	#main {
-		width: 100%;
 		overflow: hidden;
 		position: relative;
+	}
+	
+	#main {
+		padding: 10px;
 	}
 	
 	.mainheader {
@@ -23,7 +26,7 @@
 	}
 	
 	.overall {
-		margin-top: 10px;
+		padding: 0 !important;
 	}
 	
 	.mainlogo {
@@ -105,14 +108,15 @@
 		background-color: rgba(0, 0, 0, 0.4);
 	}
 	
-	#menu {
-		display: none;
+	#menu-container {
 		position: absolute;
 		top: 0;
 		right: 0;
+		height: 0;
+		display: none;
 	}
 	
-	#menu:after {
+	#menu-container:after {
 		content: '';
 		display: block;
 		width: 100%;
@@ -122,24 +126,25 @@
 		background: -webkit-linear-gradient(top center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); 
 	}
 	
-	body.menu-expanded #menu {
+	body.menu-expanded #menu-container {
 		display: block;
+		height: auto;
 		left: 0;
 	}
 	
-	#menu ul {
+	#menu-container ul {
 		width: 100%;
 		padding: 0;
 		margin: 0;
 	}
 	
-	#menu ul li {
+	#menu-container ul li {
 		padding: 0;
 		margin: 0;
 		list-style: none;
 	}
 	
-	#menu ul li a {
+	#menu-container ul li a {
 		display: block;
 		padding: 15px;
 		padding-left: 70px;
@@ -152,7 +157,7 @@
 		text-decoration: none;
 	}
 	
-	#menu ul li a:hover {
+	#menu-container ul li a:hover {
 		background-color: #E1E6EC;
 	}
 	
@@ -255,14 +260,15 @@
 	
 	/* topic icon */
 	table.forumline td[id^=cellFor][valign=top] {
-		width: 15px;
-		padding: 4px !important;
+		width: 19px;
+		padding: 3px !important;
+		padding-right: 0;
 		padding-top: 10px !important;
 	}
 	
 	table.forumline td:first-child[align=center][valign=top] + td,
 	table.forumline td[id^="lastreply"] {
-		padding-left: 30px !important;
+		padding-left: 27px !important;
 	}
 	
 	table.forumline .topictitle + .gensmall br {
@@ -339,7 +345,7 @@
 	/* post date/time right to poster - TODO: date/time and poster might overlap on small screens */
 	table.forumline .userrow1[valign] + td,
 	table.forumline .userrow2[valign] + td {
-		margin-top: -27px;
+		margin-top: -22px;
 	
 		height: 22px;
 	}
@@ -347,6 +353,7 @@
 	table.forumline .userrow1[valign] + td > :first-child,
 	table.forumline .userrow2[valign] + td > :first-child {
 		text-align: right;
+		padding-bottom: 2px !important;
 	}
 	
 	/* =================================== Forms =================================== */
@@ -416,5 +423,18 @@
 	
 	#reviewTable > tbody > tr > td .name br {
 		display: none;
+	}
+	
+	/* =================================== Shoutbox =================================== */
+	
+	.sidebarbox {
+		width: auto !important;
+	}
+	
+	#sidebar_shoutbox .close-link {
+		float: right;
+		margin-right: 5px;
+		
+		color: white;
 	}
 /*}*/
