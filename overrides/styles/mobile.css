@@ -49,7 +49,7 @@
 		display: none;
 	}
 	
-	/* ============================================================ */
+	/* =================================== Index =================================== */
 	
 	table.forumline th {
 		display: none;
@@ -74,7 +74,7 @@
 	}
 	
 	/* forum icon */
-	table.forumline td:first-child[align=center][valign=middle] {
+	table.forumline td:first-child[align=center] {
 		float: left;
 		width: 35px;
 		padding: 5px 0 !important;
@@ -91,13 +91,15 @@
 	}
 	
 	/* last post */
-	table.forumline td.borderleft[align=center][valign=middle]:last-child {
-		text-align: left;
+	table.forumline td.borderleft[align=center][valign=middle]:last-child,
+	table.forumline td[id^="lastreply"] {
+		text-align: left !important;
 		padding-left: 45px !important;
 		padding-bottom: 5px !important;
 	}
 	
-	table.forumline td.borderleft[align=center][valign=middle]:last-child a.gensmall:first-child:before {
+	table.forumline td.borderleft[align=center][valign=middle]:last-child a.gensmall:first-child:before,
+	table.forumline td[id^="lastreply"] > span:first-child:before {
 		display: inline;
 		content: 'Letzter Beitrag:';
 		padding-right: 0.5em;
@@ -105,7 +107,59 @@
 		text-align: none !important;
 	}
 	
-	table.forumline td.borderleft[align=center][valign=middle]:last-child br {
+	table.forumline td.borderleft[align=center][valign=middle]:last-child br,
+	table.forumline td[id^="lastreply"] br {
 		display: none;
+	}
+	
+	table.forumline td.borderleft[align=center][valign=middle]:last-child a,
+	table.forumline td[id^="lastreply"] a {
+		margin-right: 5px;
+	}
+	
+	/* =================================== Forum =================================== */
+	
+	/* topic icon */
+	table.forumline td:first-child[align=center][valign=top] {
+		width: 15px;
+		padding: 5px !important;
+	}
+	
+	table.forumline td:first-child[align=center][valign=top] + td,
+	table.forumline td[id^="lastreply"] {
+		padding-left: 30px !important;
+	}
+	
+	table.forumline .topictitle + .gensmall br {
+		display: none;
+	}
+	
+	table.forumline .topictitle {
+		margin-right: 5px;
+	}
+	
+	table.forumline th .statistical {
+		display: none;
+	}
+	
+	/* Hits */	
+	table.forumline td .statistical {
+		font-size: 0;
+		padding: 0 !important;
+	}
+	
+	/* Antworten */
+	table.forumline td .statistical span:first-child {
+		font-size: 10px;
+	}
+	
+	table.forumline td .statistical span:first-child:after {
+		content: 'Antw.';
+		padding-left: 2px;
+	}
+	
+	table.forumline td.row3 {
+		float: none !important;
+		width: auto !important;
 	}
 /*}*/
