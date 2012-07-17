@@ -1,0 +1,3 @@
+ErrorDocument 404 /web.php
+RewriteEngine On
+RewriteRule .* web.php
