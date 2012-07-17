@@ -1,3 +1,111 @@
-@media (max-width: 480px) {	
+/*@media (max-width: 480px) {*/
+	body {
+		min-width: 0 !important;
+	}
 	
-}
+	.mainheader {
+		height: 60px !important;
+		margin-bottom: 10px !important;
+	}
+	
+	.mainlogo {
+		height: auto !important;
+	}
+	
+	.mainlogo > a > img {
+		display: none;
+	}
+	
+	.mainlogo .eeLogoText img {
+		width: 200px;	
+	}
+	
+	.eeLogoText {
+		position: relative !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: auto !important;
+	}
+	
+	.eeSiteText {
+		margin-top: 5px !important;
+		float: none !important;
+		width: auto;
+	}
+	
+	.eeSiteText .dropdown {
+		right: auto !important;
+		left: 5px;
+	}
+	
+	/* Delphi-Tage */
+	.mainheader > div[style] {
+		display: none;
+	}
+
+	#Sidebar,
+	.headerSearch,
+	.mainmenu {
+		display: none;
+	}
+	
+	/* ============================================================ */
+	
+	table.forumline th {
+		display: none;
+		height: auto !important;
+		padding: 7px 0 !important;
+	}
+	
+	table.forumline th:first-child {
+		display: block;
+		width: 100%;
+	}
+	
+	table.forumline td {
+		display: block;
+		padding: 0px !important;
+		width: auto;
+		height: auto;
+	}
+	
+	table.forumline td[height="28"] {
+		padding: 8px 3px !important;
+	}
+	
+	/* forum icon */
+	table.forumline td:first-child[align=center][valign=middle] {
+		float: left;
+		width: 35px;
+		padding: 5px 0 !important;
+	}
+	
+	table.forumline td.statistical {
+		display: none;
+	}
+	
+	/* title & description */
+	table.forumline td:nth-child(2) {
+		padding-left: 45px !important;
+		padding-top: 5px !important;
+	}
+	
+	/* last post */
+	table.forumline td.borderleft[align=center][valign=middle]:last-child {
+		text-align: left;
+		padding-left: 45px !important;
+		padding-bottom: 5px !important;
+	}
+	
+	table.forumline td.borderleft[align=center][valign=middle]:last-child a.gensmall:first-child:before {
+		display: inline;
+		content: 'Letzter Beitrag:';
+		padding-right: 0.5em;
+		color: black;
+		text-align: none !important;
+	}
+	
+	table.forumline td.borderleft[align=center][valign=middle]:last-child br {
+		display: none;
+	}
+/*}*/
