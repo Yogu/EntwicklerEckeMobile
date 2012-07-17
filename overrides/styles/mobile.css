@@ -67,6 +67,7 @@
 		padding: 0px !important;
 		width: auto;
 		height: auto;
+		white-space: normal !important;
 	}
 	
 	table.forumline td[height="28"] {
@@ -76,7 +77,7 @@
 	/* forum icon */
 	table.forumline td:first-child[align=center] {
 		float: left;
-		width: 35px;
+		width: 50px;
 		padding: 5px 0 !important;
 	}
 	
@@ -86,16 +87,14 @@
 	
 	/* title & description */
 	table.forumline td:nth-child(2) {
-		padding-left: 45px !important;
-		padding-top: 5px !important;
+		padding: 5px 5px 5px 50px !important;
 	}
 	
 	/* last post */
 	table.forumline td.borderleft[align=center][valign=middle]:last-child,
 	table.forumline td[id^="lastreply"] {
 		text-align: left !important;
-		padding-left: 45px !important;
-		padding-bottom: 5px !important;
+		padding: 0 5px 5px 50px !important;
 	}
 	
 	table.forumline td.borderleft[align=center][valign=middle]:last-child a.gensmall:first-child:before,
@@ -122,7 +121,8 @@
 	/* topic icon */
 	table.forumline td:first-child[align=center][valign=top] {
 		width: 15px;
-		padding: 5px !important;
+		padding: 4px !important;
+		padding-top: 10px !important;
 	}
 	
 	table.forumline td:first-child[align=center][valign=top] + td,
@@ -158,8 +158,59 @@
 		padding-left: 2px;
 	}
 	
-	table.forumline td.row3 {
+	table.forumline td.row3,
+	table.forumline td:first-child[colspan] {
 		float: none !important;
 		width: auto !important;
+	}
+	
+	/* =================================== Topic =================================== */
+	
+	/* empty column at bottom left */
+	table.forumline .userrow1,
+	table.forumline .userrow2 {
+		display: none;
+	}
+	
+	/* actual userrow at top left */
+	table.forumline .userrow1[valign],
+	table.forumline .userrow2[valign] {
+		display: block;
+		padding: 5px !important;
+	}
+	
+	table.forumline td.userrow1 .postdetails,
+	table.forumline td.userrow2 .postdetails {
+		display: none;
+	}
+	
+	/* post content */
+	table.forumline td.userrow1 + .row1,
+	table.forumline td.userrow2 + .row2 {
+		padding-left: 5px !important;
+	}
+	
+	/* workaround: removes white border */
+	table.forumline .userrow1 + td,
+	table.forumline .userrow2 + td {
+		height: 22px;
+	}
+	
+	table.forumline .userrow1[valign] + td,
+	table.forumline .userrow2[valign] + td {
+		height: auto !important;
+	}
+	
+	/* post date/time right to poster - TODO: date/time and poster might overlap on small screens */
+	table.forumline .userrow1[valign] + td,
+	table.forumline .userrow2[valign] + td {
+		margin-top: -27px;
+	
+		height: 22px;
+	}
+	
+	table.forumline .userrow1[valign] + td > :first-child,
+	table.forumline .userrow2[valign] + td > :first-child {
+		text-align: right;
 	}
 /*}*/
