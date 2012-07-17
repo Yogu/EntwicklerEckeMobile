@@ -59,6 +59,10 @@ function fileNameToMime($fileName) {
 		case 'htm':
 		case 'php':
 			return 'text/html';
+		case 'css':
+			return 'text/css';
+		case 'js':
+			return 'text/javascript';
 		case 'pdf': return 'application/pdf';
 		case 'dot': return 'application/msword';
 		case 'doc': return 'application/msword';
@@ -145,7 +149,6 @@ function sendWebDocument($url) {
 	$headerString = str_replace('http://'.$host, 'http://'.$_SERVER['HTTP_HOST'], $headerString);
 	$body = count($response) == 2 ? $response[1] : '';
 
-	//echo($headers);
 	$headers = explode("\r\n", $headerString);
 	foreach ($headers as $header) {
 		if (strpos(strtolower($header), "transfer-encoding: chunked") === false)
@@ -156,6 +159,11 @@ function sendWebDocument($url) {
 		if (strpos(strtolower($headerString), "transfer-encoding: chunked") !== false)
 			$body = http_chunked_decode($body);
 		$body = str_replace('http://'.$host, 'http://'.$_SERVER['HTTP_HOST'], $body);
+		
+		if (strpos($body, '</head>') !== false && file_exists('head.html')) {
+			$htmlHead = file_get_contents("head.html");
+			$body = str_replace('</head>', $htmlHead.'</head>', $body);
+		}
 
 		echo $body;
 	}
@@ -213,7 +221,7 @@ function redirectToDocument($url) {
 
 function run() {
 	$file = $_SERVER['REQUEST_URI'];
-	if (strlen($file > 1) && strpos($file, '..') === false && $file[0] == '/') {
+	if (strlen($file) > 1 && strpos($file, '..') === false && $file[0] == '/') {
 		$fileName = dirname($_SERVER['SCRIPT_FILENAME']).'/overrides'.$file;
 		if (file_exists($fileName)) {
 			if (getFileExtension($fileName) == 'php')
