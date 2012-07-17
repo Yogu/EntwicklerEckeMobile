@@ -64,9 +64,16 @@
 		padding: 7px 0 !important;
 	}
 	
-	table.overall table.forumline > tbody > tr > th:first-child {
+	/* display first header (index + forum) or second header (topic) */
+	table.overall table.forumline > tbody > tr > th:first-child,
+	table.overall table.forumline > tbody > tr > th:first-child[width="165"] + th {
 		display: block;
 		width: 100%;
+		border-left: none !important;
+	}
+	
+	table.overall table.forumline > tbody > tr > th:first-child[width="165"] {
+		display: none;
 	}
 	
 	table.overall table.forumline > tbody > tr > td {
@@ -260,5 +267,33 @@
 		-webkit-box-sizing: border-box;
 		-o-box-sizing: border-box;
 		-ms-box-sizing: border-box;
+	}
+	
+	/* =================================== Topic Review =================================== */
+	
+	body > br {
+		display: none;
+	}
+	
+	#reviewTable {
+		display: block;
+	}
+	
+	#reviewTable > tbody > tr > th {
+		display: none;
+	}
+	
+	#reviewTable > tbody > tr {
+		display: block;
+	}
+	
+	#reviewTable > tbody > tr > td {
+		display: block;
+		width: auto !important;
+		height: auto !important;
+	}
+	
+	#reviewTable > tbody > tr > td .name br {
+		display: none;
 	}
 /*}*/
