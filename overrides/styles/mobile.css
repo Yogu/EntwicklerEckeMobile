@@ -1,6 +1,13 @@
 /*@media (max-width: 480px) {*/
+	html {
+		background: #808080;
+	}
+	
 	body {
 		min-width: 0 !important;
+		max-width: 350px !important;
+		margin: 0 auto;
+		padding-bottom: 5px;
 	}
 	
 	.mainheader {
